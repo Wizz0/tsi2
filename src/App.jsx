@@ -14,14 +14,9 @@ function App() {
         <Routes>
           <Route path= "/" element={ <Home />}> </Route>
           <Route path ="/about" element = { <About />}> </Route>
-        </Routes>
-      </BrowserRouter>
-
-      <Footer />
-      <BrowserRouter>
-        <Routes>
           <Route path ="/blog" element = { <Blog />}> </Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
 
       </>
