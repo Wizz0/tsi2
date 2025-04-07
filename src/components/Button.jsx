@@ -2,34 +2,33 @@ import React from "react";
 export const Button = (props) => {
   const { size, color, title } = props;
   // класс по умолчанию
-  const defaultClass =
-    "flex items-center rounded-2 h-[40px] w-[max-content] px-4 py-2";
+  const defaultClass = "flex items-center justify-center px-4 py-2";
 
   const classes = {
     colors: {
       primary: {
-        button: "bg-amber-700",
-        text: "text-red",
+        button: "bg-amber-700 hover:bg-amber-800",
+        text: "text-white",
       },
       secondary: {
-        button: "bg-red-500",
+        button: "bg-red-500 hover:bg-red-600",
         text: "text-white",
       },
     },
     sizes: {
-      small: "rounded-[100px] font-sm",
-      medium: "rounded-[14px] font-base",
-      large: "rounded-[16px] font-base min-h-[56px]",
+      small: "h-[32px] text-sm rounded-full",
+      medium: "h-[40px] text-base rounded-[14px]",
+      large: "h-[56px] text-lg rounded-[16px]",
     },
   };
 
   return (
-    <div
+    <button
       className={
-        defaultClass + " " + classes.sizes[size] + " " + classes.colors[color].button
+        `${defaultClass} ${classes.sizes[size]} ${classes.colors[color].button}`
       }
     >
-      <div className={classes.colors[color].text}>{title}</div>
-    </div>
+      <span className={classes.colors[color].text}>{title}</span>
+    </button>
   );
 };
